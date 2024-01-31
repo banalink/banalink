@@ -21,7 +21,7 @@ $(document).ready(function(){
     $('#loginAccount').click(function() {
       $('.unauthorized-area').addClass('open-form');
       $('.register-area').removeClass('open-form');
-      $('.container-main').addClass("hidden-container");
+      // $('.container-main').addClass("hidden-container");
     });
 
 
