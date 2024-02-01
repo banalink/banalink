@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Balance History</title>
+    <link rel='stylesheet' href='./stylesheets/style.css' />
+
+</head>
+
+<body>
+    <!-- header component -->
+    <div id="includedContentHeader"></div>
+
+
+    <!-- Agent page -->
+    <div class="container-agent">
+        <div class="title-account"><img src="./images/agent/iconhisbalance.png" alt="">Balance History</div>
+        <div class="account-agent">
+            <div class="account-info">
+                <div class="account-info__user">
+                    <p>F</p>
+                    <span>FUN77test</span>
+                </div>
+                <div class="account-info__balance">
+                    <label for=""><img src="./images/agent/iconbl.png" alt=""> Points Held</label>
+                    <div class="money"><span>0P</span> <button><img src="./images/agent/iconchange.png" alt=""></button>
+                    </div>
+                </div>
+            </div>
+            <div class="content-wrapper">
+                <ul class="cnt-tabs" id="tabs-nav">
+                    <li class="cnt-tab"><a href="#tab1">Deposit Details</a></li>
+                    <li class="cnt-tab"><a href="#tab2">Balance History</a></li>
+                    <li class="cnt-tab"><a href="#tab3">Withdrawal Details</a></li>
+                </ul>
+                <div class="main-content" id="tabs-content">
+                    <div id="tab1" class="tab-content">
+                        <div class="search-content">
+                            <ul class="pickdate">
+                                <li>Day</li>
+                                <li>Week</li>
+                                <li>Month</li>
+                            </ul>
+                            <div class="filter-date">
+                                <div class="filter-date-search">
+                                    <span class="icon-form"><img src="./images/agent/filter.png" alt=""></span>
+                                    <label for="">Filter: </label>
+                                    <input class="input-agent" autocomplete="off" type="date" placeholder="date" />
+                                </div>
+                                <div class="filter-date-search">
+                                    <input class="input-agent" autocomplete="off" type="date" placeholder="date" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="content-table">
+                            <table>
+                                <tr>
+                                    <th>No.</th>
+                                    <th>Deposit Amount</th>
+                                    <th>Increase Amount</th>
+                                    <th>Request Time</th>
+                                    <th>Completion Time</th>
+                                    <th>Processing Status</th>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>100,000</td>
+                                    <td>100,000</td>
+                                    <td>2024 - 01 - 03 14:56:12</td>
+                                    <td>2024 - 01 - 03 14:56:12</td>
+                                    <td class="pending">Pending</td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>100,000</td>
+                                    <td>100,000</td>
+                                    <td>2024 - 01 - 03 14:56:12</td>
+                                    <td>2024 - 01 - 03 14:56:12</td>
+                                    <td class="complete">Complete</td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>100,000</td>
+                                    <td>100,000</td>
+                                    <td>2024 - 01 - 03 14:56:12</td>
+                                    <td>2024 - 01 - 03 14:56:12</td>
+                                    <td class="complete">Complete</td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>100,000</td>
+                                    <td>100,000</td>
+                                    <td>2024 - 01 - 03 14:56:12</td>
+                                    <td>2024 - 01 - 03 14:56:12</td>
+                                    <td class="cancel">Cancel</td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>100,000</td>
+                                    <td>100,000</td>
+                                    <td>2024 - 01 - 03 14:56:12</td>
+                                    <td>2024 - 01 - 03 14:56:12</td>
+                                    <td class="complete">Complete</td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>100,000</td>
+                                    <td>100,000</td>
+                                    <td>2024 - 01 - 03 14:56:12</td>
+                                    <td>2024 - 01 - 03 14:56:12</td>
+                                    <td class="complete">Complete</td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>100,000</td>
+                                    <td>100,000</td>
+                                    <td>2024 - 01 - 03 14:56:12</td>
+                                    <td>2024 - 01 - 03 14:56:12</td>
+                                    <td class="complete">Complete</td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>100,000</td>
+                                    <td>100,000</td>
+                                    <td>2024 - 01 - 03 14:56:12</td>
+                                    <td>2024 - 01 - 03 14:56:12</td>
+                                    <td class="cancel">Cancel</td>
+                                </tr>
+                            </table>
+
+                            <div class="navigation">
+                                <div class="item-per-page">
+                                    <p>Items per page:</p>
+
+                                    <div class="custom-select">
+                                        <button class="select-button" role="combobox" aria-labelledby="select button"
+                                            aria-haspopup="listbox" aria-expanded="false"
+                                            aria-controls="select-dropdown">
+                                            <span class="selected-value">10</span>
+                                            <span class="arrow"></span>
+                                        </button>
+                                        <ul class="select-dropdown" role="listbox" id="select-dropdown">
+                                            <li role="option">
+                                                <input type="radio" id="option10" name="navigation" />
+                                                <label for="option10">10</label>
+                                            </li>
+                                            <li role="option">
+                                                <input type="radio" id="option20" name="navigation" />
+                                                <label for="option20">20</label>
+                                            </li>
+                                            <li role="option">
+                                                <input type="radio" id="option30" name="navigation" />
+                                                <label for="option30">30</label>
+                                            </li>
+                                            <li role="option">
+                                                <input type="radio" id="option50" name="navigation" />
+                                                <label for="option50">50</label>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="navigation-item">
+                                    <ul>
+                                        <li class="active">1</li>
+                                        <li>2</li>
+                                        <li>3</li>
+                                        <li>...</li>
+                                        <li>100</li>
+                                        <li><i class="arrow"></i></li>
+                                        <li><i class="arrow"></i><i class="arrow"></i></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="tab2" class="tab-content">
+                        <div class="search-content">
+                            <ul class="pickdate">
+                                <li>Day</li>
+                                <li>Week</li>
+                                <li>Month</li>
+                            </ul>
+                            <div class="filter-date">
+                                <div class="filter-date-search">
+                                    <span class="icon-form"><img src="./images/agent/filter.png" alt=""></span>
+                                    <label for="">Filter: </label>
+                                    <input class="input-agent" autocomplete="off" type="date" placeholder="date" />
+                                </div>
+                                <div class="filter-date-search">
+                                    <input class="input-agent" autocomplete="off" type="date" placeholder="date" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="content-table">
+                            <table>
+                                <tr>
+                                    <th>No.</th>
+                                    <th>Trading Hours</th>
+                                    <th>Number</th>
+                                    <th>Items</th>
+                                    <th>Amount</th>
+                                    <th>Final Balance</th>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>2024 - 01 - 03 14:56:12</td>
+                                    <td>13215</td>
+                                    <td>Game Items</td>
+                                    <td>100,000</td>
+                                    <td>100,000</td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>2024 - 01 - 03 14:56:12</td>
+                                    <td>13215</td>
+                                    <td>Game Items</td>
+                                    <td>100,000</td>
+                                    <td>100,000</td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>2024 - 01 - 03 14:56:12</td>
+                                    <td>13215</td>
+                                    <td>Game Items</td>
+                                    <td>100,000</td>
+                                    <td>100,000</td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>2024 - 01 - 03 14:56:12</td>
+                                    <td>13215</td>
+                                    <td>Game Items</td>
+                                    <td>100,000</td>
+                                    <td>100,000</td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>2024 - 01 - 03 14:56:12</td>
+                                    <td>13215</td>
+                                    <td>Game Items</td>
+                                    <td>100,000</td>
+                                    <td>100,000</td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>2024 - 01 - 03 14:56:12</td>
+                                    <td>13215</td>
+                                    <td>Game Items</td>
+                                    <td>100,000</td>
+                                    <td>100,000</td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>2024 - 01 - 03 14:56:12</td>
+                                    <td>13215</td>
+                                    <td>Game Items</td>
+                                    <td>100,000</td>
+                                    <td>100,000</td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>2024 - 01 - 03 14:56:12</td>
+                                    <td>13215</td>
+                                    <td>Game Items</td>
+                                    <td>100,000</td>
+                                    <td>100,000</td>
+                                </tr>
+                            </table>
+
+                            <div class="navigation">
+                                <div class="item-per-page">
+                                    <p>Items per page:</p>
+
+                                    <div class="custom-select">
+                                        <button class="select-button" role="combobox" aria-labelledby="select button"
+                                            aria-haspopup="listbox" aria-expanded="false"
+                                            aria-controls="select-dropdown">
+                                            <span class="selected-value">10</span>
+                                            <span class="arrow"></span>
+                                        </button>
+                                        <ul class="select-dropdown" role="listbox" id="select-dropdown">
+                                            <li role="option">
+                                                <input type="radio" id="option10" name="navigation" />
+                                                <label for="option10">10</label>
+                                            </li>
+                                            <li role="option">
+                                                <input type="radio" id="option20" name="navigation" />
+                                                <label for="option20">20</label>
+                                            </li>
+                                            <li role="option">
+                                                <input type="radio" id="option30" name="navigation" />
+                                                <label for="option30">30</label>
+                                            </li>
+                                            <li role="option">
+                                                <input type="radio" id="option50" name="navigation" />
+                                                <label for="option50">50</label>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="navigation-item">
+                                    <ul>
+                                        <li class="active">1</li>
+                                        <li>2</li>
+                                        <li>3</li>
+                                        <li>...</li>
+                                        <li>100</li>
+                                        <li><i class="arrow"></i></li>
+                                        <li><i class="arrow"></i><i class="arrow"></i></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="tab3" class="tab-content">
+                        <h2>Randall Graves</h2>
+                        <p>"In light of this lurid tale, I don't even see how you can romanticize your relationship with
+                            Caitlin. She broke your heart and inadvertently drove men to deviant lifestyles."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script>
+
+        $(function(){
+            $("#includedContentHeader").load("header.html"); 
+        });
+
+        // Show the first tab and hide the rest
+        $('#tabs-nav li:first-child').addClass('active');
+        $('.tab-content').hide();
+        $('.tab-content:first').show();
+
+        // Click function
+        $('#tabs-nav li').click(function () {
+            $('#tabs-nav li').removeClass('active');
+            $(this).addClass('active');
+            $('.tab-content').hide();
+
+            var activeTab = $(this).find('a').attr('href');
+            $(activeTab).fadeIn();
+            return false;
+        });
+
+
+        const customSelect = document.querySelector(".custom-select");
+        const selectBtn = document.querySelector(".select-button");
+
+        const selectedValue = document.querySelector(".selected-value");
+        const optionsList = document.querySelectorAll(".select-dropdown li");
+
+        // add click event to select button
+        selectBtn.addEventListener("click", () => {
+            // add/remove active class on the container element
+            customSelect.classList.toggle("active");
+            // update the aria-expanded attribute based on the current state
+            selectBtn.setAttribute(
+                "aria-expanded",
+                selectBtn.getAttribute("aria-expanded") === "true" ? "false" : "true"
+            );
+        });
+
+        optionsList.forEach((option) => {
+            function handler(e) {
+                // Click Events
+                if (e.type === "click" && e.clientX !== 0 && e.clientY !== 0) {
+                    selectedValue.textContent = this.children[1].textContent;
+                    customSelect.classList.remove("active");
+                }
+                // Key Events
+                if (e.key === "Enter") {
+                    selectedValue.textContent = this.textContent;
+                    customSelect.classList.remove("active");
+                }
+            }
+
+            option.addEventListener("keyup", handler);
+            option.addEventListener("click", handler);
+        });
+
+    </script>
+
+</body>
+
+</html>

@@ -31,7 +31,7 @@ function runLinter(cb) {
 exports.lint = runLinter;
 
  async function generateCSS(cb) {
-    src('./sass/**/*.scss')
+    src('./sass/style.scss')
         .pipe(sass().on('error', sass.logError))
         .pipe(dest('public/stylesheets'));
     cb();

@@ -1,0 +1,101 @@
+<!-- header -->
+<section class="header-fixed">
+    <div class="header">
+
+        <!-- sidebar -->
+        <div class="sidebar">
+            <div class="sidebar-item">
+                <p class="sidebar-head">게임 카테고리 <i class="arrow right"></i></p>
+                <ul>
+                    <li><a href=""><img src="./images/ball.png" alt="">스포츠 실시간</a></li>
+                    <li><a href=""><img src="./images/ball.png" alt="">스포츠 실시간</a></li>
+                    <li><a href=""><img src="./images/ball.png" alt="">스포츠 실시간</a></li>
+                    <li><a href=""><img src="./images/ball.png" alt="">스포츠 실시간</a></li>
+                    <li><a href=""><img src="./images/ball.png" alt="">스포츠 실시간</a></li>
+                    <li><a href=""><img src="./images/ball.png" alt="">스포츠 실시간</a></li>
+                </ul>
+            </div>
+            <div class="sidebar-item">
+                <p class="sidebar-head">게임 카테고리 <i class="arrow right"></i></p>
+                <ul>
+                    <li><a href=""><img src="./images/ball.png" alt="">스포츠 실시간</a></li>
+                    <li><a href=""><img src="./images/ball.png" alt="">스포츠 실시간</a></li>
+                </ul>
+            </div>
+            <div class="sidebar-item">
+                <p class="sidebar-head">게임 카테고리 <i class="arrow right"></i></p>
+                <ul>
+                    <li><a href=""><img src="./images/ball.png" alt="">스포츠 실시간</a></li>
+                    <li><a href=""><img src="./images/ball.png" alt="">스포츠 실시간</a></li>
+                </ul>
+            </div>
+            <div class="sidebar-item">
+                <p class="sidebar-head">게임 카테고리 <i class="arrow right"></i></p>
+                <ul>
+                    <li><a href=""><img src="./images/ball.png" alt="">스포츠 실시간</a></li>
+                    <li><a href=""><img src="./images/ball.png" alt="">스포츠 실시간</a></li>
+                    <li><a href=""><img src="./images/ball.png" alt="">스포츠 실시간</a></li>
+                    <li><a href="/balance-history.html"><img src="./images/ball.png" alt="">Balance History</a></li>
+                </ul>
+            </div>
+            <div class="sidebar-item">
+                <p class="sidebar-head">게임 카테고리 <i class="arrow right"></i></p>
+                <ul>
+                    <li><a href=""><img src="./images/ball.png" alt="">스포츠 실시간</a></li>
+                    <li><a href=""><img src="./images/ball.png" alt="">스포츠 실시간</a></li>
+                    <li><a href=""><img src="./images/ball.png" alt="">스포츠 실시간</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="header-menu">
+            <div class="header-menu-icon">
+                <div class="three">
+                    <div class="hamburger" id="hamburger">
+                        <span class="line"></span>
+                        <span class="line"></span>
+                        <span class="line"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="header-logo">
+                <a href="/"><img src="./images/logo.png" alt=""></a>
+            </div>
+        </div>
+        <div class="header-nav">
+            <ul>
+                <li><a href=""><img src="./images/ball.png" alt="">Sport Real Time</a></li>
+                <li><a href=""><img src="./images/ball.png" alt="">Sports</a></li>
+                <li><a href=""><img src="./images/ball.png" alt="">Pinnacle Sports</a></li>
+            </ul>
+        </div>
+        <div class="header-login">
+            <div class="notification">
+                <img src="./images/icon/notification.png" alt="">
+            </div>
+            <button id="loginAccount">Login</button>
+            <button id="registerAccount">Join The Membership</button>
+        </div>
+        <div class="header-logined">
+            <button id="loginAccount">dang nhap</button>
+            <button id="registerAccount">회원가입</button>
+        </div>
+    </div>
+</section>
+
+<script>
+    // toggle menu sidebar
+    $('.hamburger').addClass("is-active");
+      $(".sidebar").addClass('is-open');
+    $(".hamburger").click(function(){
+      $(this).toggleClass("is-active");
+      $(".sidebar").toggleClass('is-open');
+    });
+
+    var getToken = localStorage.getItem("TOKEN");
+    if(getToken || (getToken != null || getToken != undefined)) {
+      $(".header-login").css("display", "none");
+    } else {
+      $(".header-logined").css("display", "none");
+    }
+</script>

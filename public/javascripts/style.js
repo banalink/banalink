@@ -1,11 +1,7 @@
 $(document).ready(function(){
 
-    // // toggle menu sidebar
-    // $('.hamburger').addClass("is-active");
-    //   $(".sidebar").addClass('is-open');
-    $(".hamburger").click(function(){
-      $(this).toggleClass("is-active");
-      $(".sidebar").toggleClass('is-open');
+    $(function(){
+      $("#includedContentHeader").load("header.html"); 
     });
 
     // slick slide
@@ -41,14 +37,6 @@ $(document).ready(function(){
             $(document).find("input:not(:checked)[type='radio']").removeClass('bounce');
         }
     });
-
-
-    var getToken = localStorage.getItem("TOKEN");
-    if(getToken || (getToken != null || getToken != undefined)) {
-      $(".header-login").css("display", "none");
-    } else {
-      $(".header-logined").css("display", "none");
-    }
 });
 
 $('form').submit(function (e) {
