@@ -34,7 +34,7 @@
                 <ul>
                     <li><a href=""><img src="./images/ball.png" alt="">스포츠 실시간</a></li>
                     <li><a href=""><img src="./images/ball.png" alt="">스포츠 실시간</a></li>
-                    <li><a href=""><img src="./images/ball.png" alt="">스포츠 실시간</a></li>
+                    <li><a href="./announcement.html"><img src="./images/ball.png" alt="">announcement</a></li>
                     <li><a href="/balance-history.html"><img src="./images/ball.png" alt="">Balance History</a></li>
                 </ul>
             </div>
@@ -74,7 +74,7 @@
                 <img src="./images/icon/notification.png" alt="">
             </div>
             <button id="loginAccount">Login</button>
-            <button id="registerAccount">Join The Membership</button>
+            <button id="registerAccount">register</button>
         </div>
         <div class="header-logined">
             <button id="loginAccount">dang nhap</button>
@@ -85,11 +85,26 @@
 
 <script>
     // toggle menu sidebar
-    $('.hamburger').addClass("is-active");
-      $(".sidebar").addClass('is-open');
+    // $('.hamburger').addClass("is-active");
+    //   $(".sidebar").addClass('is-open');
     $(".hamburger").click(function(){
       $(this).toggleClass("is-active");
       $(".sidebar").toggleClass('is-open');
+    });
+
+
+    // open login form
+    $('#loginAccount').click(function() {
+      $('.unauthorized-area').addClass('open-form');
+      $('.register-area').removeClass('open-form');
+      // $('.container-main').addClass("hidden-container");
+    });
+
+
+    // open register form
+    $('#registerAccount').click(function() {
+      $('.unauthorized-area').removeClass('open-form');
+      $('.register-area').addClass('open-form');
     });
 
     var getToken = localStorage.getItem("TOKEN");

@@ -11,6 +11,13 @@
 .container-agent {
 	background: $color-white;
 	padding: 6rem 3rem;
+	@media (max-width: 1020px) {
+		padding: 6rem 1.5rem;
+	}
+
+	@media (max-width: 960px) {
+		padding: 5rem 1rem;
+	}
 
 	.title-account {
 		font-size: 2rem;
@@ -24,8 +31,15 @@
 		max-width: 1200px;
 		margin: 1.5rem auto;
 
+		@media (max-width: 1020px) {
+			font-size: 1.5rem;
+		}
+
 		img {
 			margin-right: 10px;
+			@media (max-width: 1020px) {
+				width: 25px;
+			}
 		}
 	}
 }
@@ -50,6 +64,9 @@
 		border-radius: 10px;
 		-webkit-box-shadow: 0 0 4px rgba($color: $color-black, $alpha: 0.2);
 		box-shadow: 0 0 4px rgba($color: $color-black, $alpha: 0.2);
+		@media (max-width: 1020px) {
+			padding: 0.5rem;
+		}
 
 		&__user {
 			display: -webkit-box;
@@ -85,6 +102,11 @@
 				-ms-flex-align: center;
 				align-items: center;
 				margin-bottom: 10px;
+				@media (max-width: 1020px) {
+					width: 50px;
+					height: 50px;
+					font-size: 1rem;
+				}
 			}
 		}
 
@@ -92,6 +114,9 @@
 			label {
 				display: block;
 				margin: 20px 0;
+				img {
+					vertical-align: top;
+				}
 			}
 
 			.money {
@@ -103,12 +128,20 @@
 				-webkit-box-align: center;
 				-ms-flex-align: center;
 				align-items: center;
+				@media (max-width: 1020px) {
+					font-size: 1.5rem;
+				}
 
 				button {
 					background: $color-black;
 					bottom: 0;
 					border-radius: 2px;
 					cursor: pointer;
+					@media (max-width: 1020px) {
+						img {
+							width: 12px;
+						}
+					}
 
 					&:hover {
 						background: $color-primary;
@@ -127,12 +160,15 @@
 	.content-wrapper {
 		width: 79%;
 		background: $color-white;
-		border-radius: 10px;
+		border-radius: 5px;
 		border: 1px solid $color-border;
 		-webkit-box-shadow: 0 0 4px rgba($color: $color-black, $alpha: 0.2);
 		box-shadow: 0 0 4px rgba($color: $color-black, $alpha: 0.2);
 		width: 74%;
 		padding: 1rem 0;
+		@media (max-width: 1020px) {
+			width: 76%;
+		}
 
 		.cnt-tabs {
 			display: -webkit-box;
@@ -161,6 +197,9 @@
 				margin: 0 2%;
 				text-align: center;
 				border-bottom: 1px solid transparent;
+				@media (max-width: 1020px) {
+					padding: 1rem 0.5rem 1rem;
+				}
 
 				a {
 					color: $color-agent;
@@ -181,6 +220,9 @@
 
 		.main-content {
 			padding: 0 1.5rem;
+			@media (max-width: 1020px) {
+				padding: 0.5rem;
+			}
 
 			.search-content {
 				display: -webkit-box;
@@ -206,11 +248,19 @@
 					background: rgba($color: $color-db-button, $alpha: 0.5);
 					width: 260px;
 					border-radius: 5px;
+					@media (max-width: 1020px) {
+						width: 180px;
+					}
 
 					li {
 						padding: 10px 20px;
 						margin: 3px 0;
 						color: $color-border;
+						font-size: 0.9rem;
+
+						@media (max-width: 1020px) {
+							padding: 10px 10px;
+						}
 
 						&:first-child {
 							background: $color-white;
@@ -252,6 +302,9 @@
 
 					.input-agent {
 						margin-left: 20px;
+						@media (max-width: 1020px) {
+							margin-left: 5px;
+						}
 					}
 				}
 			}

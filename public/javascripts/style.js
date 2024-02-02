@@ -1,7 +1,11 @@
 $(document).ready(function(){
 
+
+  // toggle menu sidebar
+
     $(function(){
       $("#includedContentHeader").load("header.html"); 
+      $("#includedContentFooter").load("footer.html");
     });
 
     // slick slide
@@ -11,20 +15,6 @@ $(document).ready(function(){
         prevArrow: '<div class="slick-prev"><img src="./images/iconprev.png" alt=""></div>',
         nextArrow: '<div class="slick-next"><img src="./images/iconnext.png" alt=""></div>',
         dots: true,
-    });
-
-    // open login form
-    $('#loginAccount').click(function() {
-      $('.unauthorized-area').addClass('open-form');
-      $('.register-area').removeClass('open-form');
-      // $('.container-main').addClass("hidden-container");
-    });
-
-
-    // open register form
-    $('#registerAccount').click(function() {
-      $('.unauthorized-area').removeClass('open-form');
-      $('.register-area').addClass('open-form');
     });
 
     $(document).find("input:checked[type='radio']").addClass('bounce');   
@@ -37,7 +27,22 @@ $(document).ready(function(){
             $(document).find("input:not(:checked)[type='radio']").removeClass('bounce');
         }
     });
+
+    let arrayList = document.querySelectorAll(".tab-type li");
+
+    arrayList.forEach((elm, id) => {
+      $('#tab-' + id).click(function() {
+        arrayList.forEach((e, id) => {
+          e.classList.remove('active');
+        });
+        elm.classList.add('active');
+        const element = document.getElementById("list-game-tab" + id);
+          element.scrollIntoView({ behavior: 'smooth'});
+      });
+    });
+
 });
+    
 
 $('form').submit(function (e) {
   e.preventDefault();

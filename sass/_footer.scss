@@ -1,0 +1,97 @@
+
+.footer ul {
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: center;
+    -moz-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-justify-content: space-between;
+    -moz-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between
+}
+
+.footer ul li {
+    width: 20vw;
+    height: 14vw
+}
+
+.footer ul li a {
+    width: 20vw;
+    height: 14vw;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: center;
+    -moz-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-justify-content: center;
+    -moz-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-flex-direction: column;
+    -moz-box-orient: vertical;
+    -moz-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    color: var(--txtColor08);
+    font-size: .75rem
+}
+
+.footer ul li.active a {
+    background: var(--bgColor03);
+    color: var(--txtColor01)
+}
+
+.footer ul li a div {
+    margin-top: 1vw;
+    text-align: center;
+    color: var(--txtColor14)
+}
+
+.footer ul li.active a div {
+    color: var(--txtColor01)
+}
+
+.footer ul li a span:first-child {
+    font-size: 1.25rem
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {
+    .footer ul li:nth-child(3) a,.footer ul li a {
+        font-size:1.2rem
+    }
+
+    .footer ul li a span:first-child {
+        font-size: 2.8rem
+    }
+
+    .footer ul li:nth-child(3) a span:first-child {
+        font-size: 2.4rem
+    }
+}
+
+@media only screen and (min-width: 1024px) and (max-height: 1366px) and (-webkit-min-device-pixel-ratio: 1.5) {
+    .footer ul li:nth-child(3) a,.footer ul li a {
+        font-size:1.6rem
+    }
+
+    .footer ul li a span:first-child {
+        font-size: 4rem
+    }
+
+    .footer ul li:nth-child(3) a span:first-child {
+        font-size: 3.2rem
+    }
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-device-pixel-ratio: 2) and (device-aspect-ratio: 40/71) {
+    .footer ul li a {
+        font-size:.72rem
+    }
+}

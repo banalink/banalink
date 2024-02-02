@@ -167,6 +167,23 @@ a {
   color: #B9B9C3;
 }
 
+.pc-web {
+  @media (min-width: 768px) {
+    display: block;
+  }
+  @media (max-width: 768px) {
+    display: none;
+  }
+}
+.mb-web {
+  @media (min-width: 768px) {
+    display: none !important;
+  }
+  @media (max-width: 768px) {
+    display: block !important;
+  }
+}
+
 .container {
   max-width: 1200px;
   background-color: $color-content;
