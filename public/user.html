@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Page</title>
+    <link rel='stylesheet' href='./stylesheets/style.css' />
+</head>
+
+<body>
+
+    <!-- header component -->
+    <div id="includedContentHeader"></div>
+
+    <!-- Agent page -->
+    <div class="container-agent">
+        <div class="title-account"><img src="./images/agent/iconhisbalance.png" alt="">Member Center</div>
+        <div class="account-agent">
+            <div class="account-info">
+                <div class="account-info__user">
+                    <p>F</p>
+                    <span>FUN77test</span>
+                </div>
+                <div class="account-info__balance">
+                    <label for=""><img src="./images/agent/iconbl.png" alt=""> Points Held</label>
+                    <div class="money"><span>0P</span> <button><img src="./images/agent/iconchange.png" alt=""></button>
+                    </div>
+                </div>
+            </div>
+            <div class="content-wrapper useraccount">
+                <div class="user">
+                    <button class="collapsible">
+                        <i class="fa-regular fa-circle-user"></i>My Page<span class="drop"></span>
+                    </button>
+                    <div class="content">
+                        <ul class="mypage-info">
+                            <li><a href="">Profile</a></li>
+                            <li><a href="/resetpassword.html">Reset Password</a></li>
+                        </ul>
+                    </div>
+
+                    <button class="collapsible">
+                        <i class="fa-solid fa-wallet"></i>My Wallet<span class="drop"></span>
+                    </button>
+                    <div class="content">
+                        <ul class="mypage-info">
+                            <li><a href="./deposit.html">Deposit</a></li>
+                            <li><a href="./withdraw.html">Withdraw</a></li>
+                            <li><a href="./balance-history.html">Balance History</a></li>
+                            <li><a href="">Check Registered Account</a></li>
+                        </ul>
+                    </div>
+                    <button class="collapsible">
+                        <a href="./bettingdetails.html"><i class="fa-solid fa-file-contract"></i>Betting Details</a>
+                    </button>
+                    <div class="content"></div>
+                    <button class="collapsible">
+                        <a href="./customerservice.html"><i class="fa-solid fa-headset"></i>Customer Service Center</a>
+                    </button>
+                    <div class="content"></div>
+                    <div class="logout">
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                        <p>Log Out</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="./javascripts/fontawsome.js" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+        <script>
+            $(function () {
+                $("#includedContentHeader").load("header.html");
+            });
+        </script>
+        <script>
+            var coll = document.getElementsByClassName("collapsible");
+            var i;
+            
+            for (i = 0; i < coll.length; i++) {
+              coll[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var content = this.nextElementSibling;
+                if (content.style.maxHeight){
+                  content.style.maxHeight = null;
+                } else {
+                  content.style.maxHeight = content.scrollHeight + "px";
+                } 
+              });
+            }
+        </script>
+</body>
+
+</html>

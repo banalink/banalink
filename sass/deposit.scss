@@ -1,0 +1,427 @@
+.content-wrapper.deposit {
+    width: 100%;
+    padding: 4% 2%;
+
+    &.withdrawal {
+        .list-money {
+            padding-bottom: 0;
+        }
+
+        .btn-convert {
+            margin-top: 30px;
+        }
+        .checkusdt {
+            .list-money {
+                display: none;
+            }
+            .item-input {
+                display: flex;
+            }
+            .your-balance {
+                display: flex;
+            }
+        }
+    }
+
+    .back-user a {
+        display: flex;
+        align-items: center;
+        padding-bottom: 20px;
+
+        i {
+            margin-right: 10px;
+            font-size: 1rem;
+            color: $color-black;
+        }
+    }
+
+    .btn-convert {
+        width: 100%;
+        height: 3rem;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        background: $color-btn-navi;
+        border: 0;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+        color: $color-white;
+        border-radius: 5px;
+        cursor: pointer;
+        font-weight: bold;
+        text-transform: uppercase;
+        -webkit-animation: button-login .25s ease-out;
+        animation: button-login .25s ease-out;
+
+        &.disable {
+            background-color: rgba($color: $color-btn-navi, $alpha: 0.3);
+            pointer-events: none;
+        }
+
+        &:hover {
+            opacity: 0.8;
+        }
+    }
+
+    .list-apply-deposit {
+        border: 1px solid $color-bd-input;
+        height: 50px;
+        border-radius: .5rem;
+        display: flex;
+        align-items: center;
+        padding: 0 10px;
+
+        button {
+            padding: 10px 10px;
+            border: 0;
+            background: $color-btn-navi;
+            color: $color-white;
+            font-size: 0.9rem;
+            border-radius: 5px;
+            text-transform: uppercase;
+            cursor: pointer;
+
+            &:hover {
+                opacity: 0.8;
+            }
+        }
+    }
+
+    .input-money {
+        position: relative;
+
+        p {
+            color: $color-agent;
+            font-size: 0.9rem;
+            margin: 15px 0;
+        }
+
+        input,
+        select {
+            height: 50px;
+            padding-left: 1rem;
+            font-size: 1rem;
+            line-height: 2rem;
+            border: 1px solid $color-bd-input;
+            --un-border-opacity: 0;
+            --un-bg-opacity: 1;
+            background-color: $color-white;
+            border-radius: .2rem;
+            margin-top: 35px;
+            color: $color-black;
+            width: calc(100% - 1.2rem);
+
+            &:focus {
+                outline-style: solid;
+                outline-width: 0;
+                outline-color: $color-focus-input;
+                border: 1px solid $color-focus-input;
+            }
+
+            @media (max-width: 768px) {
+                border-radius: 0.3rem;
+                height: 50px;
+            }
+        }
+
+        select {
+            height: 54px;
+        }
+
+        &.checkbox {
+            margin-top: 40px;
+
+            input {
+                margin-top: 0;
+            }
+        }
+
+        label {
+            position: absolute;
+            top: 27px;
+            left: 35px;
+            z-index: 1;
+            color: $color-agent;
+
+            @media (max-width: 768px) {
+                position: inherit;
+                left: 0;
+                font-weight: normal;
+            }
+
+            &::before {
+                content: "";
+                position: absolute;
+                width: 100%;
+                height: 1px;
+                background: $color-white;
+                top: 8px;
+                left: -10px;
+                z-index: -1;
+                padding: 0 10px;
+
+                @media (max-width: 768px) {
+                    content: none;
+                }
+            }
+        }
+    }
+
+    .join-item {
+        position: absolute;
+        right: 0;
+        bottom: 1px;
+        height: 54px;
+        border: 0;
+        border-radius: 0 3px 3px 0;
+        padding: 0 15px;
+        background: $color-bd-input;
+        z-index: 10;
+        font-weight: bold;
+        cursor: pointer;
+
+        &:hover {
+            opacity: 0.8;
+        }
+    }
+
+    .your-balance {
+        display: none;
+        align-items: center;
+        padding-top: 5px;
+        p {
+            font-size: 0.7rem;
+            color: $color-agent;
+        }
+        strong {
+            font-size: 1rem;
+            display: inline-block;
+            margin: 0 5px;
+        }
+        img {
+            width: 20px;
+        }
+    }
+
+    .item-input {
+        display: none;
+        align-items: center;
+        width: 100%;
+        justify-content: space-between;
+
+        .input-money {
+            width: 50%;
+        }
+    }
+
+    .list-money {
+        padding: 20px 0;
+
+        ul {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+
+            li {
+                width: 24%;
+                background: rgba($color: #EAECF0, $alpha: 1);
+                padding: 10px 0;
+                text-align: center;
+                border-radius: 5px;
+                border: 1px solid rgba($color: #EAECF0, $alpha: 1);
+                cursor: pointer;
+                font-size: 0.9rem;
+                margin: 0.5% 1% 0.5% 0;
+
+                &:nth-child(4),
+                &:nth-child(8) {
+                    margin-right: 0;
+                }
+
+                &:hover {
+                    background: $color-btn-navi;
+                    color: $color-white;
+                }
+
+                &:last-child {
+                    color: $color-black;
+                    border: 1px solid rgba($color: $color-border, $alpha: 1);
+                    background: $color-white;
+
+                    &:hover {
+                        background: $color-black;
+                        color: $color-white;
+                        border: 1px solid rgba($color: $color-black, $alpha: 1);
+                    }
+                }
+            }
+        }
+    }
+
+    .checkbox-deposit {
+        margin-top: 30px;
+
+        .radio-item {
+            height: 50px;
+            padding-left: 1rem;
+            font-size: 1rem;
+            line-height: 2rem;
+            border: 1px solid $color-bd-input;
+            --un-border-opacity: 0;
+            --un-bg-opacity: 1;
+            background-color: $color-white;
+            border-radius: .5rem;
+            margin-top: 10px;
+            color: $color-black;
+            display: flex;
+            align-items: center;
+            width: calc(100% - 1.2rem);
+        }
+
+        p {
+            color: $color-agent;
+            font-size: 0.8rem;
+            margin: 15px 0;
+        }
+    }
+
+    .choose-money-deposit {
+        margin-bottom: 20px;
+
+        p {
+            color: $color-agent;
+            font-size: 0.8rem;
+            margin: 15px 0;
+        }
+
+        label {
+            font-size: 1rem;
+            color: #fff;
+            font-weight: 500;
+            cursor: pointer;
+        }
+
+        .btn-color-mode-switch {
+            display: inline-block;
+            margin: 0px;
+            position: relative;
+        }
+
+        .btn-color-mode-switch>label.btn-color-mode-switch-inner {
+            margin: 0px;
+            width: 176px;
+            height: 38px;
+            background: rgba($color: #EAECF0, $alpha: 1);
+            border-radius: 26px;
+            overflow: hidden;
+            position: relative;
+            transition: all 0.3s ease;
+            display: block;
+            box-shadow: 0 0 5px rgba($color: #101828, $alpha: 0.2);
+            padding: 5px 10px;
+        }
+
+        .btn-color-mode-switch>label.btn-color-mode-switch-inner:before {
+            content: attr(data-on);
+            position: absolute;
+            font-size: 12px;
+            font-weight: 500;
+            right: 40px;
+            top: 50%;
+            color: $color-black;
+            opacity: 1;
+            transform: translateY(-50%);
+            font-size: 1rem;
+        }
+
+        .btn-color-mode-switch>label.btn-color-mode-switch-inner:after {
+            content: attr(data-off);
+            width: 90px;
+            height: 30px;
+            background: $color-btn-navi;
+            border-radius: 26px;
+            position: absolute;
+            left: 5px;
+            top: 4px;
+            transition: all 0.3s ease;
+            padding: 5px 0px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .btn-color-mode-switch input[type="checkbox"] {
+            cursor: pointer;
+            width: 50px;
+            height: 25px;
+            opacity: 0;
+            position: absolute;
+            top: 0;
+            z-index: 1;
+            margin: 0px;
+        }
+
+        .btn-color-mode-switch input[type="checkbox"]:checked+label.btn-color-mode-switch-inner:after {
+            content: attr(data-on);
+            left: 100px;
+            background: $color-btn-navi;
+        }
+
+        .btn-color-mode-switch input[type="checkbox"]:checked+label.btn-color-mode-switch-inner:before {
+            content: attr(data-off);
+            right: auto;
+            left: 40px;
+        }
+
+        .btn-color-mode-switch input[type="checkbox"]:checked~.alert {
+            display: block;
+        }
+    }
+
+    .error {
+        margin-bottom: 10px;
+
+        p {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            font-size: 0.8rem;
+            padding-top: 5px;
+
+            span {
+                color: $color-red;
+                display: inline-block;
+                margin-left: 5px;
+            }
+        }
+    }
+
+    .note {
+        background: rgba($color: #EAECF0, $alpha: 1);
+        box-shadow: 0 0 5px rgba($color: #101828, $alpha: 0.2);
+        padding: 20px;
+        border-radius: 5px;
+        margin-top: 30px;
+        list-style-type: disc;
+
+        ul {
+            padding-left: 30px;
+        }
+
+        li {
+            list-style-type: disc;
+            color: $color-agent;
+            font-size: 0.9rem;
+            margin: 12px 0;
+        }
+    }
+}

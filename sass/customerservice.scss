@@ -1,0 +1,120 @@
+@import "./variables.scss";
+
+.customerservice {
+
+    padding: 1rem;
+
+    .not-found-data {
+        display: none;
+        .content-table {
+            display: block;
+            width: 100%;
+        }
+    }
+
+    // content table 
+    .content-table {
+        margin-top: 0;
+
+        .submit-question {
+            text-align: right;
+            margin-bottom: 20px;
+            button {
+                cursor: pointer;
+                margin-left: auto;
+                background: #C9FA49;
+                border: 0;
+                padding: 5px 5px;
+                border-radius: 5px;
+                display: inline-flex;
+                align-items: center;
+                &:hover {
+                    opacity: 0.8;
+                }
+                img {
+                    width: 15px;
+                    margin-right: 5px;
+                }
+            }
+        }
+
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        tr,
+        th,
+        td {
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+            padding-left: 0.625rem;
+            padding-right: 0.625rem;
+        }
+
+        th {
+            border: 0;
+            text-align: left;
+            background: $color-white;
+            font-size: 0.8rem;
+            font-weight: 700;
+            line-height: 1.5rem;
+            color: $color-black;
+            border-top: 1px solid $color-border;
+            border-bottom: 1px solid $color-border;
+            &:first-child {
+                text-align: center;
+            }
+        }
+
+        tr {
+            background-color: $color-white;
+
+            &:nth-child(odd) {
+                background-color: rgba($color: $color-black, $alpha: 0.12);
+            }
+        }
+
+        td {
+            border: 0;
+            text-align: left;
+            font-size: .875rem;
+            line-height: 1.25rem;
+            color: $color-agent;
+            &:first-child {
+                text-align: center;
+            }
+            img {
+                vertical-align: top;
+                margin-right: 10px;
+            }
+            &:nth-child(3) {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                span{
+                    display: inline-block;
+                    background: rgba($color: $color-red, $alpha: 0.3);
+                    border-radius: 15px;
+                    height: 30px;
+                    line-height: 1.8rem;
+                    padding: 0 15px;
+                    font-size: 0.7rem;
+                    &.Waiting {
+                        background: rgba($color: $color-black, $alpha: 0.12);
+                    }
+                    &.cancel {
+                        background: rgba($color: $color-red, $alpha: 0.3);
+                    }
+                    &.complete {
+                        color: $color-complete;
+                        background: rgba($color: $color-complete, $alpha: 0.3);
+                    }
+                }
+            }
+        }
+
+    }
+}

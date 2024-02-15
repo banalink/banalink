@@ -1,0 +1,179 @@
+.account-agent .content-wrapper {
+    &.detail-betting {
+        width: 100%;
+        .hidelistdetail {
+            display: none;
+        }
+
+        .not-found-data {
+            display: block;
+
+            .content-table {
+                display: block;
+                width: 100%;
+            }
+        }
+
+        .list-games {
+            display: flex;
+            flex-wrap: wrap;
+            li {
+                width: 23%;
+                margin: 1% 1% 1.5%;
+                position: relative;
+                &:hover {
+                    .detail-promo {
+                        transition: 0.2s all ease-in-out;
+                        transform: translateX(-50%) scale(1);
+                    }
+                }
+                img {
+                    width: 100%;
+                    box-shadow: 0 0 10px rgba($color: #101828, $alpha: 0.2);
+                    border-radius: 5px;
+                }
+
+                .detail-promo {
+                    cursor: pointer;
+                    border: 0;
+                    left: 50%;
+                    transform: translateX(-50%) scale(0);
+                    top: 0;
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    background: rgba($color: $color-black, $alpha: 0.5);
+                    border-radius: 5px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    transition: 0.2s all ease-in-out;
+                    span {
+                        font-size: 0.7rem;
+                        width: 65%;
+                        display: inline-block;
+                        padding: 10px;
+                        text-align: center;
+                        color: $color-white;
+                        background: $color-btn-navi;
+                        border-radius: 5px;
+                        text-transform: uppercase;
+                    }
+                }
+            }
+        }
+
+        .cnt-tabs {
+            border-bottom: 0;
+            justify-content: flex-start;
+
+            .cnt-tab {
+                cursor: pointer;
+                width: auto;
+                margin: 0 0.5%;
+                border-radius: 5px;
+                padding: 10px 10px;
+                background: #F2F4F7;
+                border: 1px solid $color-border;
+
+                a {
+                    color: $color-agent;
+                    font-weight: normal;
+                    display: flex;
+                    align-content: center;
+                    justify-content: flex-start;
+                    font-size: 0.9rem;
+
+                    span {
+                        font-size: 0.7rem;
+                        line-height: 1;
+                        display: inline-block;
+                        padding: 2px 5px;
+                        background: rgba($color: $color-white, $alpha: 0.5);
+                        border-radius: 10px;
+                        margin-left: 8px;
+                        margin-top: -1px;
+                        height: 12px;
+                    }
+                }
+
+                &.active,
+                &:hover {
+
+                    background: $color-btn-navi;
+
+                    a {
+                        font-weight: bold;
+                        color: $color-white;
+                    }
+                }
+            }
+        }
+
+        .content-tabs {
+            /* Tab Links */
+            .tabs {
+                display: flex;
+                .tablinks {
+                    border: none;
+                    outline: none;
+                    cursor: pointer;
+                    width: 100%;
+                    padding: 0 1rem 1rem;
+                    font-size: 13px;
+                    text-transform: uppercase;
+                    font-weight: 600;
+                    transition: 0.2s ease;
+                    background: transparent;
+                    color: $color-black;
+                    border-bottom: 1px solid $color-border;
+                    &:hover, &.active {
+                        color: $color-btn-navi;
+                        border-bottom: 2px solid $color-btn-navi;
+                    }
+                }
+            }
+
+            /* tab content */
+            .tabcontent {
+                display: none;
+                margin-top: 10px;
+                &.active {
+                    display: block;
+                }
+            }
+        }
+
+        .games-detail {
+            margin-top: -18px;
+            display: none;
+            &.opendetail {
+                display: block;
+            }
+            .back-detail a {
+                display: flex;
+                align-items: center;
+                padding: 20px;
+                background: $color-hover;
+                border-radius: 10px 10px 0 0;
+                color: $color-black;
+                i {
+                    margin: 0 10px;
+                    font-size: 1rem;
+                    color: $color-black;
+                }
+            }
+            .detail-item {
+                display: flex;
+                justify-content: center;
+                padding: 30px;
+                li {
+                    text-align: center;
+                    img {
+                        width: 90%;
+                    }
+                }
+            }
+        }
+    }
+}

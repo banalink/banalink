@@ -136,30 +136,14 @@
                                     <p>Items per page:</p>
 
                                     <div class="custom-select">
-                                        <button class="select-button" role="combobox" aria-labelledby="select button"
-                                            aria-haspopup="listbox" aria-expanded="false"
-                                            aria-controls="select-dropdown">
-                                            <span class="selected-value">10</span>
-                                            <span class="arrow"></span>
-                                        </button>
-                                        <ul class="select-dropdown" role="listbox" id="select-dropdown">
-                                            <li role="option">
-                                                <input type="radio" id="option10" name="navigation" />
-                                                <label for="option10">10</label>
-                                            </li>
-                                            <li role="option">
-                                                <input type="radio" id="option20" name="navigation" />
-                                                <label for="option20">20</label>
-                                            </li>
-                                            <li role="option">
-                                                <input type="radio" id="option30" name="navigation" />
-                                                <label for="option30">30</label>
-                                            </li>
-                                            <li role="option">
-                                                <input type="radio" id="option50" name="navigation" />
-                                                <label for="option50">50</label>
-                                            </li>
-                                        </ul>
+                                        <select class="select">
+                                            <option value="10" selected="10">10</option>
+                                            <option value="20">20</option>
+                                            <option value="30">30</option>
+                                            <option value="40">40</option>
+                                            <option value="50">50</option>
+                                            <option value="100">100</option>
+                                        </select>
                                     </div>
                                 </div>
                                 <div class="navigation-item">
@@ -167,8 +151,9 @@
                                         <li class="active">1</li>
                                         <li>2</li>
                                         <li>3</li>
+                                        <li>4</li>
                                         <li>...</li>
-                                        <li>100</li>
+                                        <li>24</li>
                                         <li><i class="arrow"></i></li>
                                         <li><i class="arrow"></i><i class="arrow"></i></li>
                                     </ul>
@@ -276,30 +261,14 @@
                                     <p>Items per page:</p>
 
                                     <div class="custom-select">
-                                        <button class="select-button" role="combobox" aria-labelledby="select button"
-                                            aria-haspopup="listbox" aria-expanded="false"
-                                            aria-controls="select-dropdown">
-                                            <span class="selected-value">10</span>
-                                            <span class="arrow"></span>
-                                        </button>
-                                        <ul class="select-dropdown" role="listbox" id="select-dropdown">
-                                            <li role="option">
-                                                <input type="radio" id="option10" name="navigation" />
-                                                <label for="option10">10</label>
-                                            </li>
-                                            <li role="option">
-                                                <input type="radio" id="option20" name="navigation" />
-                                                <label for="option20">20</label>
-                                            </li>
-                                            <li role="option">
-                                                <input type="radio" id="option30" name="navigation" />
-                                                <label for="option30">30</label>
-                                            </li>
-                                            <li role="option">
-                                                <input type="radio" id="option50" name="navigation" />
-                                                <label for="option50">50</label>
-                                            </li>
-                                        </ul>
+                                        <select class="select">
+                                            <option value="10" selected="10">10</option>
+                                            <option value="20">20</option>
+                                            <option value="30">30</option>
+                                            <option value="40">40</option>
+                                            <option value="50">50</option>
+                                            <option value="100">100</option>
+                                        </select>
                                     </div>
                                 </div>
                                 <div class="navigation-item">
@@ -416,30 +385,14 @@
                                     <p>Items per page:</p>
 
                                     <div class="custom-select">
-                                        <button class="select-button" role="combobox" aria-labelledby="select button"
-                                            aria-haspopup="listbox" aria-expanded="false"
-                                            aria-controls="select-dropdown">
-                                            <span class="selected-value">10</span>
-                                            <span class="arrow"></span>
-                                        </button>
-                                        <ul class="select-dropdown" role="listbox" id="select-dropdown">
-                                            <li role="option">
-                                                <input type="radio" id="option10" name="navigation" />
-                                                <label for="option10">10</label>
-                                            </li>
-                                            <li role="option">
-                                                <input type="radio" id="option20" name="navigation" />
-                                                <label for="option20">20</label>
-                                            </li>
-                                            <li role="option">
-                                                <input type="radio" id="option30" name="navigation" />
-                                                <label for="option30">30</label>
-                                            </li>
-                                            <li role="option">
-                                                <input type="radio" id="option50" name="navigation" />
-                                                <label for="option50">50</label>
-                                            </li>
-                                        </ul>
+                                        <select class="select">
+                                            <option value="10" selected="10">10</option>
+                                            <option value="20">20</option>
+                                            <option value="30">30</option>
+                                            <option value="40">40</option>
+                                            <option value="50">50</option>
+                                            <option value="100">100</option>
+                                        </select>
                                     </div>
                                 </div>
                                 <div class="navigation-item">
@@ -468,20 +421,154 @@
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
     <script>
 
-        $(function(){
-            $("#includedContentHeader").load("header.html"); 
+        $(function () {
+            $("#includedContentHeader").load("header.html");
             $("#includedContentFooter").load("footer.html");
         });
 
         window.addEventListener("load", (event) => {
-            this.selectFucntion();
+            selectFucntion();
         });
+        function selectFucntion() {
+            $("ul.selectCF").remove();
+            (function ($) {
+                $.fn.selectCF = function (options) {
+                    var customSelect = ''; // add Html
+                    var seachEl = '';
+                    var seachElOption = '';
+                    var seachElInput = '';
+                    var width = '';
+                    var selectParent = '';
 
-        let customSelect;
-        let selectBtn;
-        let selectedValue;
-        let optionsList;
+                    var elActive = '';
 
+                    // option
+                        settings = $.extend({
+                        color: "#FFF", // color
+                        backgroundColor: "#50C9AD", // background
+                        change: function () { }, // event change
+                    }, options);
+                    
+                    return this.each(function () {
+
+                        selectParent = $(this);
+                        list = [],
+                            html = '';
+
+                        //parameter CSS
+                        width = $(selectParent).width();
+
+                        $(selectParent).hide();
+                        if ($(selectParent).children('option').length == 0) { return; }
+                        $(selectParent).children('option').each(function () {
+                            if ($(this).is(':selected')) { s = 1; title = $(this).text(); } else { s = 0; }
+                            list.push({
+                                value: $(this).attr('value'),
+                                text: $(this).text(),
+                                selected: s,
+                            })
+                        })
+
+                        html += "<ul class='selectCF'>";
+                        html += "<li>";
+                        html += "<span class='arrowCF ion-chevron-right'></span>";
+                        html += "<span class='titleCF'>" + title + "</span>";
+                        html += "<span class='searchCF'><input/></span>";
+                        html += "<ul>";
+                        $.each(list, function (k, v) {
+                            s = (v.selected == 1) ? "selected" : "";
+                            html += "<li value=" + v.value + " class='" + s + "'>" + v.text + "</li>";
+                        })
+                        html += "</ul>";
+                        html += "</li>";
+                        html += "</ul>";
+                        $(selectParent).after(html);
+                        customSelect = $(this).next('ul.selectCF'); // add Html
+                        seachEl = $(this).next('ul.selectCF').children('li').children('.searchCF');
+                        seachElOption = $(this).next('ul.selectCF').children('li').children('ul').children('li');
+                        seachElInput = $(this).next('ul.selectCF').children('li').children('.searchCF').children('input');
+
+                        // handle active select
+                        $(customSelect).unbind('click').bind('click', function (e) {
+                            e.stopPropagation();
+                            if ($(this).hasClass('onCF')) {
+                                elActive = '';
+                                $(this).removeClass('onCF');
+                                $(this).removeClass('searchActive'); $(seachElInput).val('');
+                                $(seachElOption).show();
+                            } else {
+                                if (elActive != '') {
+                                    $(elActive).removeClass('onCF');
+                                    $(elActive).removeClass('searchActive'); $(seachElInput).val('');
+                                    $(seachElOption).show();
+                                }
+                                elActive = $(this);
+                                $(this).addClass('onCF');
+                                $(seachEl).children('input').focus();
+                            }
+                        })
+
+                        // handle choose option
+                        var optionSelect = $(customSelect).children('li').children('ul').children('li');
+                        $(optionSelect).bind('click', function (e) {
+                            var value = $(this).attr('value');
+                            if ($(this).hasClass('selected')) {
+                                //
+                            } else {
+                                $(optionSelect).removeClass('selected');
+                                $(this).addClass('selected');
+                                $(customSelect).children('li').children('.titleCF').html($(this).html());
+                                $(selectParent).val(value);
+                                settings.change.call(selectParent); // call event change
+                            }
+                        })
+
+                        // handle search 
+                        $(seachEl).children('input').bind('keyup', function (e) {
+                            var value = $(this).val();
+                            if (value) {
+                                $(customSelect).addClass('searchActive');
+                                $(seachElOption).each(function () {
+                                    if ($(this).text().search(new RegExp(value, "i")) < 0) {
+                                        // not item
+                                        $(this).fadeOut();
+                                    } else {
+                                        // have item
+                                        $(this).fadeIn();
+                                    }
+                                })
+                            } else {
+                                $(customSelect).removeClass('searchActive');
+                                $(seachElOption).fadeIn();
+                            }
+                        })
+
+                    });
+                };
+                $(document).click(function () {
+                    if (elActive != '') {
+                        $(elActive).removeClass('onCF');
+                        $(elActive).removeClass('searchActive');
+                    }
+                })
+            }(jQuery));
+
+            $(function () {
+                var event_change = $('#event-change');
+                $(".select").selectCF({
+                    change: function () {
+                        var value = $(this).val();
+                        var text = $(this).children('option:selected').html();
+                        console.log(value + ' : ' + text);
+                        event_change.html(value + ' : ' + text);
+                    }
+                });
+                $(".test").selectCF({
+                    color: "#FFF",
+                    backgroundColor: "#663052",
+                });
+            })
+        }
         // Show the first tab and hide the rest
         $('#tabs-nav li:first-child').addClass('active');
         $('.tab-content').hide();
@@ -495,64 +582,29 @@
         $('#tabs-content').prepend(my_form1);
         // Click function
         $('#tabs-nav li').click(function () {
-            customSelect = null;
-            selectBtn = null;
-            selectedValue = null;
-            optionsList = null;
 
             $('#tabs-nav li').removeClass('active');
             $(this).addClass('active');
             var activeTab = $(this).find('a').attr('href');
             $('.tab-content').remove();
-            if(activeTab === '#tab1') {
+            if (activeTab === '#tab1') {
                 $('#tabs-content').prepend(my_form1);
-            } else if(activeTab === '#tab2') {
+                
+            } else if (activeTab === '#tab2') {
                 $('#tabs-content').prepend(my_form2);
             } else {
                 $('#tabs-content').prepend(my_form3);
             }
+            setTimeout(() => {
+                selectFucntion();
+            }, 100);
             $(activeTab).fadeIn();
             return false;
         });
 
+    </script>
 
-        function selectFucntion() {
-            let customSelect = document.querySelector(".custom-select");
-            let selectBtn = document.querySelector(".select-button");
-
-            let selectedValue = document.querySelector(".selected-value");
-            let optionsList = document.querySelectorAll(".select-dropdown li");
-
-            // add click event to select button
-            selectBtn.addEventListener("click", () => {
-                // add/remove active class on the container element
-                customSelect.classList.toggle("active");
-                // update the aria-expanded attribute based on the current state
-                selectBtn.setAttribute(
-                    "aria-expanded",
-                    selectBtn.getAttribute("aria-expanded") === "true" ? "false" : "true"
-                );
-            });
-
-            optionsList.forEach((option) => {
-                function handler(e) {
-                    // Click Events
-                    if (e.type === "click" && e.clientX !== 0 && e.clientY !== 0) {
-                        selectedValue.textContent = this.children[1].textContent;
-                        customSelect.classList.remove("active");
-                    }
-                    // Key Events
-                    if (e.key === "Enter") {
-                        selectedValue.textContent = this.textContent;
-                        customSelect.classList.remove("active");
-                    }
-                }
-
-                option.addEventListener("keyup", handler);
-                option.addEventListener("click", handler);
-            });
-            return false;
-        }
+    <script>
 
     </script>
 

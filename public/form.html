@@ -1,0 +1,143 @@
+<!-- login form -->
+<section class="unauthorized-area">
+    <form class="login-frm" id="loginForm">
+        <div class="close"><i class="fa-solid fa-xmark"></i></div>
+        <div class="logo-login"><img src="./images/logologin.png" alt=""></div>
+        <div class="title-login">Join The Membership</div>
+        <div class="account">
+            <label for="">ID Name</label>
+            <span class="icon-user"><img src="./images/icon/user.png" alt=""></span>
+            <input autocomplete="off" id="email" name="email" type="text" placeholder="Enter Your ID" />
+            <div class="error">
+                <p><img src="./images/icon/iconerror.png" alt=""><span>Helper text</span></p>
+            </div>
+        </div>
+        <div class="account">
+            <label for="">Password</label>
+            <span class="icon-user"><img src="./images/icon/password.png" alt=""></span>
+            <input autocomplete="off" id="password" name="password" type="password" placeholder="Enter your password" />
+            <span class="icon-user eyes"><img src="./images/icon/eyesclose.png" alt=""></span>
+            <div class="error">
+                <p><img src="./images/icon/iconerror.png" alt=""><span>Helper text</span></p>
+            </div>
+        </div>
+        <div class="login">
+            <div class="remember">
+                <div class="remember-id">
+                    <input class="rounded-checkbox" autocomplete="off" id="remember" type="checkbox"
+                        [checked]="rememberMe" />
+                    <label class="remember-pwd" for="remember">Remember ID</label>
+                </div>
+                <div class="forgot-password">
+                    <p>Forgot your password?</p>
+                </div>
+            </div>
+            <button id="login_btn" disabled type="submit" class="btn-login">Sign in</button>
+        </div>
+
+        <div class="register-account">
+            <span>Don’t have an account? </span>
+            <button class="regaccount">Sign Up</button>
+        </div>
+    </form>
+</section>
+
+<!-- register form -->
+<section class="register-area">
+    <form class="register-frm">
+        <div class="close"><i class="fa-solid fa-xmark"></i></div>
+        <div class="logo-login"><img src="./images/logologin.png" alt=""></div>
+        <div class="title-register">Join The Membership</div>
+
+        <ul class="step-register">
+            <li><span>1</span>
+                <p>Personal Info</p>
+            </li>
+            <li class="line-step"></li>
+            <li><span>2</span>
+                <p>Bank Card</p>
+            </li>
+        </ul>
+        <div class="register-form">
+            <div class="register-form-left">
+                <div class="account">
+                    <label for="">ID Name <i>(*)</i></label>
+                    <span class="icon-form"><img src="./images/icon/user.png" alt=""></span>
+                    <input autocomplete="off" type="text" placeholder="Duplication" />
+                    <button type="button" class="join-item">DUPLICATION</button>
+                </div>
+                <div class="account">
+                    <label for="">Carrier <i>(*)</i></label>
+                    <span class="icon-form"><img src="./images/icon/carrier.png" alt=""></span>
+                    <input autocomplete="off" type="text" placeholder="Choose your carrier" />
+                    <div class="account radio">
+                        <div class="radio-item">
+                            <div class="radio-check">Male
+                                <input type="radio" checked="checked" name="radio">
+                                <span class="checkmark"></span>
+                            </div>
+                            <div class="radio-check">Female
+                                <input type="radio" name="radio">
+                                <span class="checkmark"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item-input">
+                    <div class="account quesadilla">
+                        <label for="">Date of birth <i>(*)</i></label>
+                        <span class="icon-form"><img src="./images/icon/calendar.png" alt=""></span>
+                        <input autocomplete="off" type="date" placeholder="date" />
+                    </div>
+                    <div class="account">
+                        <label for="">Phone Number <i>(*)</i></label>
+                        <span class="icon-form"><img src="./images/icon/phone.png" alt=""></span>
+                        <input autocomplete="off" type="number" placeholder="Phone Number" />
+                        <button type="button" class="join-item">SEND VERIFY CODE</button>
+                    </div>
+                </div>
+                <div class="account">
+                    <label for="">Authentication Number <i>(*)</i></label>
+                    <span class="icon-form"><img src="./images/icon/authen.png" alt=""></span>
+                    <input autocomplete="off" type="text" placeholder="Please enter authentication number code" />
+                    <button type="button" class="join-item">CHECK VERIFY CODE</button>
+                </div>
+                <div class="account">
+                    <label for="">Password <i>(*)</i></label>
+                    <span class="icon-form"><img src="./images/icon/password.png" alt=""></span>
+                    <input autocomplete="off" type="password" placeholder="Enter your password" />
+                </div>
+                <div class="account">
+                    <label for="">Confirm Password <i>(*)</i></label>
+                    <span class="icon-form"><img src="./images/icon/password.png" alt=""></span>
+                    <input autocomplete="off" type="password" placeholder="Enter your confirm password" />
+                </div>
+
+                <div class="account">
+                    <label for="">Withdrawal Password <i>(*)</i></label>
+                    <span class="icon-form"><img src="./images/icon/passwd.png" alt=""></span>
+                    <input autocomplete="off" type="password" placeholder="Enter withdrawal password" />
+                </div>
+
+            </div>
+        </div>
+        <div class="register">
+            <button type="submit" class="btn-register">next</button>
+        </div>
+
+        <div class="register-account">
+            <a href="">
+                <span>Already have an account? </span>
+                <span class="link">SIGN IN</span>
+            </a>
+        </div>
+    </form>
+</section>
+
+<script>
+    $(".close").click(function () {
+        $(".unauthorized-area").removeClass("open-form");
+        $(".register-area").removeClass("open-form");
+        $("body").removeClass("hidden-container");
+    });
+</script>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Withdrawal</title>
+    <link rel='stylesheet' href='./stylesheets/style.css' />
+    <script src="./javascripts/fontawsome.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <!-- header component -->
+    <div id="includedContentHeader"></div>
+
+    <!-- Agent page -->
+    <div class="container-agent">
+        <div class="title-account"><img src="./images/agent/iconhisbalance.png" alt="">Withdrawal</div>
+        <div class="account-agent">
+            <div class="content-wrapper deposit withdrawal">
+                <div class="deposit-content">
+                    <div class="back-user">
+                        <a href="./user.html">
+                            <i class="fa-solid fa-arrow-left"></i>
+                            <i class="fa-solid fa-money-bill-transfer"></i>
+                            <p>Withdrawal</p>
+                        </a>
+                    </div>
+                    <div class="choose-money-deposit">
+                        <p>Check deposit account information</p>
+                        <div class="btn-container">
+                            <label class="switch btn-color-mode-switch">
+                                <input type="checkbox" name="color_mode" id="color_mode" value="1">
+                                <label for="color_mode" data-on="USDT" data-off="KRW"
+                                    class="btn-color-mode-switch-inner"></label>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="input-money">
+                        <label for="">Current Balance</label>
+                        <input autocomplete="off" id="money" name="money" type="number" placeholder="0" />
+                    </div>
+
+                    <div class="item-input">
+                        <div class="input-money">
+                            <label for="">Network</label>
+                            <select class="select">
+                                <option value="USC20" selected="USC20">USC20</option>
+                                <option value="USC20">USC20</option>
+                                <option value="USC20">USC20</option>
+                                <option value="USC20">USC20</option>
+                                <option value="USC20">USC20</option>
+                                <option value="USC20">USC20</option>
+                            </select>
+                        </div>
+                        <div class="input-money">
+                            <label for="">USDT Address</label>
+                            <input autocomplete="off" type="text" placeholder="ex:46501sd56416" />
+                        </div>
+                    </div>
+
+                    <div class="input-money">
+                        <label for="">Amount</label>
+                        <input autocomplete="off" id="money" name="money" type="number" placeholder="0" />
+                        <button type="button" class="join-item">Full Amount</button>
+                    </div>
+                    <div class="your-balance">
+                        <p>Your Wallet Balance = </p>
+                        <strong>1,200651320</strong>
+                        <img src="./images/agent/iconmoney.png" alt="">
+                    </div>
+                    <div class="list-money">
+                        <ul>
+                            <li>10,000 WON</li>
+                            <li>30,000 WON</li>
+                            <li>50,000 WON</li>
+                            <li>100,000 WON</li>
+                            <li>300,000 WON</li>
+                            <li>500,000 WON</li>
+                            <li>1 MILLION WON</li>
+                            <li>3 MILLION WON</li>
+                            <li>5 MILLION WON</li>
+                            <li>10 MILLION WON</li>
+                            <li>reset</li>
+                        </ul>
+                    </div>
+
+                    <div class="input-money">
+                        <label for="">Withdrawal password</label>
+                        <input autocomplete="off" id="password" name="password" type="password" placeholder="Enter your withdrawal password" />
+                    </div>
+
+                    <button type="button" class="btn-convert disable">WITHDRAWAL REQUEST</button>
+                </div>
+
+                <div class="note">
+                    <h4>Notification:</h4>
+                    <ul>
+                        <li>Withdrawal requests must be rolled with valid bets.</li>
+                        <li>It takes approximately 5 to 15 minutes for each game company to transmit betting results.</li>
+                        <li>For more stable withdrawals, please apply for withdrawal approximately 10 minutes after your last bet.</li>
+                        <li>Please apply for withdrawal avoiding bank inspection hours (23:50 ~ 00:20).</li>
+                        <li>If there is a withdrawal request in progress, additional withdrawal requests are not possible.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+
+        <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+
+        <script>
+            $(function () {
+                $("#includedContentHeader").load("header.html");
+            });
+
+            $("#color_mode").click(function () {
+                var checked = $('input[name="color_mode"]:checked').length > 0;
+                if(checked) {
+                    $(".deposit-content").addClass("checkusdt");
+                } else {
+                    $(".deposit-content").removeClass("checkusdt");
+                }
+            });
+
+
+        </script>
+</body>
+
+</html>

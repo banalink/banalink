@@ -1,4 +1,9 @@
-
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
 .footer ul {
     display: -webkit-flex;
     display: -moz-box;
@@ -11,41 +16,50 @@
     -webkit-justify-content: space-between;
     -moz-box-pack: justify;
     -ms-flex-pack: justify;
-    justify-content: space-between
-}
-
-.footer ul li {
-    width: 20vw;
-    height: 14vw
-}
-
-.footer ul li a {
-    width: 20vw;
-    height: 14vw;
-    display: -webkit-flex;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-align-items: center;
-    -moz-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    -webkit-justify-content: center;
-    -moz-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    -webkit-flex-direction: column;
-    -moz-box-orient: vertical;
-    -moz-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    color: var(--txtColor08);
-    font-size: .75rem
-}
-
-.footer ul li.active a {
-    background: var(--bgColor03);
-    color: var(--txtColor01)
+    justify-content: space-between;
+    background: $color-white;
+    
+    @media (min-width: 768px) {
+        display: none;
+    }
+    li {
+        width: 20vw;
+        height: 14vw;
+        &.active a {
+            background: $color-primary;
+            color: $color-white;
+            i {
+                color: $color-white;
+            }
+        }
+        a {
+            width: 20vw;
+            height: 14vw;
+            display: -webkit-flex;
+            display: -moz-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-align-items: center;
+            -moz-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            -webkit-justify-content: center;
+            -moz-box-pack: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+            -webkit-flex-direction: column;
+            -moz-box-orient: vertical;
+            -moz-box-direction: normal;
+            -ms-flex-direction: column;
+            flex-direction: column;
+            color: var(--txtColor08);
+            font-size: .75rem;
+            i {
+                font-size: 1rem;
+                color: $color-primary;
+            }
+        }
+    }
 }
 
 .footer ul li a div {

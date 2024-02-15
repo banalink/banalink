@@ -7,6 +7,24 @@
 
 @import "./mixin.scss";
 
+body {
+  @media (min-width: 768px) {
+    &.hidden-container {
+      position: relative;
+      &:after {
+        z-index: 1;
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        background-color: rgba($color: $color-black, $alpha: 0.5);
+      }
+    }
+  }
+}
+
 .container-main {
   padding-top: 80px;
 
@@ -16,12 +34,10 @@
 
   @media (max-width: 768px) {
     padding-top: 43px;
-  }
-
-  &.hidden-container {
-    padding-top: 0;
-    overflow: hidden;
-    height: 90vh;
+    padding-bottom: 60px;
+    .container {
+      padding: 0 3%;
+    }
   }
 }
 
@@ -83,13 +99,13 @@
     position: relative;
 
     @media (max-width: 768px) {
-      margin: 0 5px 1px;
+      margin: 0;
     }
 
     &::before {
       content: "";
       position: absolute;
-      background: url("../images/noti.png") no-repeat;
+      background: url("../images/home/noti.png") no-repeat;
       background-size: 100% 100%;
       width: 20px;
       height: 20px;
@@ -125,6 +141,9 @@
       transform: translateY(-50%);
       left: 0;
       z-index: 1;
+      @media (max-width: 768px) {
+        width: 30px;
+      }
     }
   }
 
@@ -161,9 +180,15 @@
 
   @media (max-width: 768px) {
     margin-top: 10px;
-    padding: 5px;
+    padding: 5px 0;
     border-radius: 5px;
     background: transparent;
+    min-height: 180px;
+    height: 190px;
+  }
+
+  .slick-slide img {
+    height: 100%;
   }
 
   img {
@@ -175,6 +200,9 @@
     object-fit: fill;
     max-width: 100%;
     height: auto;
+    @media (max-width: 768px) {
+      height: 100%;
+    }
   }
 
   .slick-arrow {
@@ -184,7 +212,7 @@
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
     left: -10px;
-    z-index: 3;
+    z-index: 1;
     background: $color-white;
     padding: 5px;
     cursor: pointer;
@@ -261,6 +289,8 @@
 
     @media (max-width: 768px) {
       border-radius: 10px;
+      min-height: 180px;
+      height: 190px;
     }
   }
 }
@@ -270,13 +300,11 @@
 
   &-left {
     display: none;
+    width: 18%;
 
     @media (max-width: 768px) {
       display: block;
-      padding-left: 15px;
     }
-
-    width: 18%;
 
     ul.tab-type {
       width: 13.6vw;
@@ -385,6 +413,7 @@
 
     @media (max-width: 768px) {
       margin-top: 5px;
+      background: transparent;
     }
 
     .lists-game {
@@ -413,6 +442,7 @@
 
         @media (max-width: 768px) {
           width: 100%;
+          margin: 1% 0;
         }
 
         &:hover {
@@ -498,7 +528,6 @@
 
         @media (max-width: 960px) {
           padding: 10px 10px;
-          width: 47%;
         }
 
         @media (max-width: 768px) {
@@ -616,6 +645,9 @@
       width: 100%;
       border-radius: 15px 15px 0 0;
       overflow: hidden;
+      @media (max-width: 768px) {
+        margin-bottom: 20px;
+      }
     }
 
     tr,
@@ -624,7 +656,10 @@
       padding: 1.2rem 0.625rem;
 
       @media (max-width: 960px) {
-        padding: 0.8rem 0.425rem;
+        padding: 0.8rem 0.4rem;
+      }
+      @media (max-width: 768px) {
+        padding: 0.6rem 0.1rem;
       }
     }
 
@@ -640,6 +675,10 @@
       @media (max-width: 960px) {
         font-size: 0.78rem;
         line-height: 1.2rem;
+      }
+      @media (max-width: 768px) {
+        font-size: 0.7rem;
+        text-align: center;
       }
     }
 
@@ -661,6 +700,10 @@
         font-size: .775rem;
         line-height: 1rem;
       }
+      @media (max-width: 768px) {
+        font-size: .7rem;
+      }
+
 
       img {
         width: 15px;
@@ -668,6 +711,11 @@
         background: $color-white;
         border-radius: 50%;
         padding: 3px;
+        @media (max-width: 768px) {
+          width: 12px;
+          margin-right: 3px;
+        }
+  
       }
 
       &:first-child {
@@ -678,13 +726,16 @@
           position: absolute;
           top: 10px;
           left: 5px;
+          @media (max-width: 768px) {
+            top: 12px;
+            left: 5px;
+          }
         }
       }
     }
   }
 
   &-right {
-    padding: 0 15px;
 
     &::-webkit-scrollbar {
       display: none;
@@ -692,7 +743,7 @@
 
     @media (max-width: 768px) {
       width: 82%;
-      max-height: 50vh;
+      max-height: calc(60vh - 40px);
       overflow: auto;
 
       .title {
@@ -773,16 +824,26 @@ footer {
 
 // login form
 .unauthorized-area {
-  background: $color-white;
+  background: transparent;
   position: absolute;
   top: 80px;
   left: 0;
   width: 100%;
-  height: 80vh;
+  height: 111.5vh;
   z-index: 100;
   padding: 1.5rem 0;
   padding-top: 11.5vh;
   display: none;
+
+  @media (max-width: 1020px) {
+    top: 60px;
+    height: 111.5vh;
+    padding-top: 3.5vh;
+  }
+
+  @media (max-width: 768px) {
+    top: 45px;
+  }
 
   &.open-form {
     display: block;
@@ -795,6 +856,19 @@ footer {
     box-shadow: 0px 0px 20px rgba($color: $color-black, $alpha: 0.3);
     padding: 30px 10px;
     border-radius: 10px;
+    background: $color-white;
+    position: relative;
+    .close {
+      position: absolute;
+      right: 15px;
+      cursor: pointer;
+      top: 8px;
+      font-size: 2rem;
+      color: $color-bd-input;
+    }
+    @media (max-width: 768px) {
+      box-shadow: none;
+    }
   }
 
   .title-login {
@@ -803,6 +877,9 @@ footer {
     font-weight: 600;
     text-align: center;
     margin-bottom: 0.2rem;
+    @media (max-width: 768px) {
+      font-size: 1.4rem;
+    }
   }
 
   .account {
@@ -814,9 +891,15 @@ footer {
       position: absolute;
       top: 58px;
       left: 10px;
+      @media (max-width: 768px) {
+        top: 69px;
+      }
 
       img {
         width: 25px;
+        @media (max-width: 768px) {
+          width: 20px;
+        }
       }
 
       &.eyes {
@@ -837,13 +920,18 @@ footer {
       border-radius: .5rem;
       margin-top: 35px;
       color: $color-black;
-      width: 90%;
+      width: calc(100% - 3rem);
 
       &:focus {
         outline-style: solid;
         outline-width: 0;
         outline-color: $color-focus-input;
         border: 1px solid $color-focus-input;
+      }
+
+      @media (max-width: 768px) {
+        border-radius: 0.3rem;
+        height: 50px;
       }
     }
 
@@ -852,6 +940,12 @@ footer {
       top: 27px;
       left: 35px;
       z-index: 1;
+      color: $color-agent;
+      @media (max-width: 768px) {
+        position: inherit;
+        left: 0;
+        font-weight: normal;
+      }
 
       &::before {
         content: "";
@@ -863,10 +957,14 @@ footer {
         left: -10px;
         z-index: -1;
         padding: 0 10px;
+        @media (max-width: 768px) {
+          content: none;
+        }
       }
     }
 
     .error {
+      display: none;
       p {
         display: -webkit-box;
         display: -ms-flexbox;
@@ -936,6 +1034,17 @@ footer {
       -ms-flex-align: center;
       align-items: center;
       margin-bottom: 15px;
+      justify-content: space-between;
+      color: $color-agent;
+      font-size: 0.8rem;
+      &-id {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+      }
 
       input {
         height: 1rem;
@@ -1011,13 +1120,18 @@ footer {
   .logo-login {
     margin: 0 auto;
     text-align: center;
+    @media (max-width: 768px) {
+      width: 100%;
+      img {
+        width: 100%;
+      }
+    }
   }
 }
 
-
 // form register
 .register-area {
-  background: $color-white;
+  background: transparent;
   position: absolute;
   top: 80px;
   left: 0;
@@ -1027,7 +1141,10 @@ footer {
   padding-top: 5vh;
   padding-bottom: 30vh;
   display: none;
-
+  @media (max-width: 768px) {
+    padding-top: 1vh;
+    top: 45px;
+  }
   &.open-form {
     display: block;
   }
@@ -1043,6 +1160,9 @@ footer {
     -ms-flex-align: center;
     align-items: center;
     margin: 30px 0;
+    @media (max-width: 768px) {
+      margin: 10px 0 25px;
+    }
 
     li {
       width: 20%;
@@ -1068,6 +1188,10 @@ footer {
       font-size: 1.2rem;
       color: $color-primary;
       margin-top: 10px;
+      @media (max-width: 768px) {
+        font-size: 0.8rem;
+        margin-top: 0;
+      }
     }
 
     span {
@@ -1087,30 +1211,59 @@ footer {
       font-size: 1.5rem;
       text-align: center;
       color: $color-white;
+      @media (max-width: 768px) {
+        width: 20px;
+        height: 20px;
+        font-size: 1rem;
+        margin-bottom: 10px;
+      }
     }
   }
 
   .logo-login {
     margin: 0 auto;
     text-align: center;
+    @media (max-width: 768px) {
+      width: 100%;
+      img {
+        width: 100%;
+      }
+    }
   }
 
   .title-register {
-    font-size: 3rem;
+    font-size: 1.875rem;
     line-height: 2.25rem;
     font-weight: 600;
     text-align: center;
     margin-bottom: 0.2rem;
-    margin-top: 1rem;
+    @media (max-width: 768px) {
+      font-size: 1.4rem;
+    }
   }
 
   .register-frm {
+    background: $color-white;
     width: 810px;
     margin: 0 auto;
     -webkit-box-shadow: 0px 0px 20px rgba($color: $color-black, $alpha: 0.3);
     box-shadow: 0px 0px 20px rgba($color: $color-black, $alpha: 0.3);
     padding: 30px 10px;
     border-radius: 10px;
+    position: relative;
+    .close {
+      position: absolute;
+      right: 15px;
+      cursor: pointer;
+      top: 8px;
+      font-size: 2rem;
+      color: $color-bd-input;
+    }
+    @media (max-width: 768px) {
+      box-shadow: none;
+      padding: 5px 10px;
+      width: auto;
+    }
   }
 
   .register-form {
@@ -1149,9 +1302,14 @@ footer {
     -webkit-box-pack: justify;
     -ms-flex-pack: justify;
     justify-content: space-between;
+    @media (max-width: 768px) {
+      display: block;
+    }
 
     input {
-      width: 85% !important;
+      @media (min-width: 768px) {
+        width: 85% !important;
+      }
     }
 
     .quesadilla {
@@ -1181,19 +1339,27 @@ footer {
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center;
+    @media (max-width: 768px) {
+      display: block;
+    }
 
     i {
       color: $color-red;
     }
-
     .icon-form {
       position: absolute;
       top: 45px;
       left: 10px;
       z-index: 1;
+      @media (max-width: 768px) {
+        top: 43px;
+      }
 
       img {
         width: 25px;
+        @media (max-width: 768px) {
+          width: 20px;
+        }
       }
 
       &.eyes {
@@ -1207,6 +1373,11 @@ footer {
       top: 12px;
       left: 35px;
       z-index: 1;
+      color: $color-agent;
+      @media (max-width: 768px) {
+        position: initial;
+        font-weight: normal;
+      }
 
       &::before {
         content: "";
@@ -1218,6 +1389,9 @@ footer {
         left: -10px;
         z-index: -1;
         padding: 0 10px;
+        @media (max-width: 768px) {
+          content: none;
+        }
       }
     }
 
@@ -1233,6 +1407,14 @@ footer {
       z-index: 10;
       font-weight: bold;
       cursor: pointer;
+      @media (max-width: 768px) {
+        height: 52px;
+        bottom: 21px;
+        border-radius: 0 .3rem .3rem 0;
+        right: -3px;
+        font-size: 0.7rem;
+        padding: 0 10px;
+      }
 
       &:hover {
         opacity: 0.8;
@@ -1252,7 +1434,7 @@ footer {
       background-color: $color-white;
       border-radius: .5rem;
       margin-top: 20px;
-      width: 100%;
+      width: calc(100% - 3rem);
       z-index: 0;
 
       &:focus {
@@ -1260,6 +1442,15 @@ footer {
         outline-width: 0;
         outline-color: $color-focus-input;
         border: 1px solid $color-focus-input;
+      }
+      @media (max-width: 768px) {
+        border-radius: 0.3rem;
+        margin-top: 10px;
+        height: 50px;
+        padding-left: 2.5rem;
+        margin-bottom: 20px;
+        padding-top: 0;
+        width: calc(100% - 2.5rem);
       }
     }
 
@@ -1334,6 +1525,9 @@ footer {
       align-items: center;
       margin: 35px 0 15px 40px;
       color: $color-info-text;
+      @media (max-width: 768px) {
+        margin: 0px 0 20px 40px;
+      }
     }
 
     .radio-check input {
@@ -1354,6 +1548,9 @@ footer {
       background-color: $color-content;
       border-radius: 50%;
       border: 1px solid $color-bd-input;
+      @media (max-width: 768px) {
+        top: -3px;
+      }
 
       &:hover {
         border: 1px solid $color-primary;
@@ -1438,6 +1635,9 @@ footer {
       -webkit-animation: button-login .25s ease-out;
       animation: button-login .25s ease-out;
       margin-top: 30px;
+      @media (max-width: 768px) {
+        margin-top: 0;
+      }
 
       &:hover {
         color: $color-white;
@@ -1510,6 +1710,13 @@ footer {
 
 @import "./balance-his.scss";
 @import "./announcement.scss";
-
-
+@import "./customerservice.scss";
+@import "./user.scss";
+@import "./resetpass.scss";
+@import "./promotion.scss";
+@import "./games.scss";
+@import "./menu.scss";
+@import "./detail.scss";
+@import "./pointdetail.scss";
+@import "./deposit.scss";
 @import "./footer.scss";

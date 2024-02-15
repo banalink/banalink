@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MemberPoint History</title>
+    <link rel='stylesheet' href='./stylesheets/style.css' />
+    <script src="./javascripts/fontawsome.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <!-- header component -->
+    <div id="includedContentHeader"></div>
+
+    <!-- Agent page -->
+    <div class="container-agent">
+        <div class="title-account"><img src="./images/agent/iconhisbalance.png" alt="">MemberPoint History</div>
+        <div class="account-agent">
+            <div class="content-wrapper pointdetail">
+                <div class="content-tabs">
+                    <!-- Tab links -->
+                    <div class="tabs">
+                        <button class="tablinks active" data-electronic="poinconversion">Point Conversion</button>
+                        <button class="tablinks" data-electronic="poindetail">Point Details</button>
+                    </div>
+
+                    <!-- Tab content -->
+                    <div class="wrapper_tabcontent">
+                        <div id="poinconversion" class="tabcontent active">
+                            <div class="monty-detail">
+                                <ul>
+                                    <li>
+                                        <label for="money held">money held</label>
+                                        <h3><span>0</span> WON</h3>
+                                        <i class="fa-solid fa-dollar-sign"></i>
+                                    </li>
+                                    <li>
+                                        <label for="money held">Points Held</label>
+                                        <h3><span>0</span> P</h3>
+                                        <i class="fa-solid fa-dollar-sign"></i>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="input-money">
+                                <label for="">Point Conversion</label>
+                                <input autocomplete="off" id="money" name="money" type="number" placeholder="1,000,000" />
+                            </div>
+                            <div class="list-money">
+                                <ul>
+                                    <li>Total points</li>
+                                    <li>100,000P</li>
+                                    <li>100,000P</li>
+                                    <li>100,000P</li>
+                                    <li>100,000P</li>
+                                    <li>100,000P</li>
+                                    <li>100,000P</li>
+                                    <li>100,000P</li>
+                                    <li>100,000P</li>
+                                    <li>100,000P</li>
+                                    <li>100,000P</li>
+                                    <li>reset</li>
+                                </ul>
+                            </div>
+
+                            <button type="button" class="btn-convert">convert to held money</button>
+                        </div>
+
+                        <div id="poindetail" class="tabcontent">
+                            <div class="not-found-data">
+                                <div class="content-table">
+                                    <table>
+                                        <tr>
+                                            <th>Post Number</th>
+                                            <th>Title</th>
+                                        </tr>
+                                    </table>
+                                    <img src="./images/agent/notfound.svg" alt="">
+                                </div>
+                            </div>
+                            <div class="content-table">
+                                <table>
+                                    <tr>
+                                        <th>Hour</th>
+                                        <th>Details</th>
+                                        <th>Category</th>
+                                        <th>Point</th>
+                                        <th>See More</th>
+                                        <th>Memo</th>
+                                    </tr>
+                                    <tr>
+                                        <td>2024 - 01 - 03 14:56:12</td>
+                                        <td>Rolling Comp Bonus</td>
+                                        <td>Real-time comp</td>
+                                        <td>10,200</td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>2024 - 01 - 03 14:56:12</td>
+                                        <td>Rolling Comp Bonus</td>
+                                        <td>Real-time comp</td>
+                                        <td>10,200</td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>2024 - 01 - 03 14:56:12</td>
+                                        <td>Rolling Comp Bonus</td>
+                                        <td>Real-time comp</td>
+                                        <td>10,200</td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>2024 - 01 - 03 14:56:12</td>
+                                        <td>Rolling Comp Bonus</td>
+                                        <td>Real-time comp</td>
+                                        <td>10,200</td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>2024 - 01 - 03 14:56:12</td>
+                                        <td>Rolling Comp Bonus</td>
+                                        <td>Real-time comp</td>
+                                        <td>10,200</td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>2024 - 01 - 03 14:56:12</td>
+                                        <td>Rolling Comp Bonus</td>
+                                        <td>Real-time comp</td>
+                                        <td>10,200</td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                </table>
+        
+                                <div class="navigation">
+                                    <div class="navigation-item">
+                                        <ul>
+                                            <li class="active">1</li>
+                                            <li>2</li>
+                                            <li>3</li>
+                                            <li>4</li>
+                                            <li>...</li>
+                                            <li>24</li>
+                                            <li><i class="arrow"></i></li>
+                                            <li><i class="arrow"></i><i class="arrow"></i></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+
+        <script>
+            $(function () {
+                $("#includedContentHeader").load("header.html");
+            });
+            var tabLinks = document.querySelectorAll(".tablinks");
+            var tabContent = document.querySelectorAll(".tabcontent");
+
+            tabLinks.forEach(function (el) {
+                el.addEventListener("click", openTabs);
+            });
+
+
+            function openTabs(el) {
+                var btn = el.currentTarget; // lắng nghe sự kiện và hiển thị các element
+                var electronic = btn.dataset.electronic; // lấy giá trị trong data-electronic
+
+                tabContent.forEach(function (el) {
+                    el.classList.remove("active");
+                });
+
+                tabLinks.forEach(function (el) {
+                    el.classList.remove("active");
+                });
+
+                document.querySelector("#" + electronic).classList.add("active");
+
+                btn.classList.add("active");
+            }
+        </script>
+</body>
+
+</html>

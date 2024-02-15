@@ -1,0 +1,102 @@
+.account-agent .content-wrapper {
+    &.games {
+        width: 100%;
+        .not-found-data {
+            display: block;
+            .content-table {
+                display: block;
+                width: 100%;
+            }
+        }
+        .cnt-tabs {
+            border-bottom: 0;
+            justify-content: center;
+            padding: 0 1.9rem;
+            .cnt-tab {
+                cursor: pointer;
+                width: auto;
+                margin: 0 0.5%;
+                border-radius: 5px;
+                padding: 10px 10px;
+                border: 0;
+    
+                a {
+                    color: $color-black;
+                    font-weight: normal;
+                    display: flex;
+                    align-content: center;
+                    justify-content: center;
+                    font-size: 0.9rem;
+                    img {
+                        width: 20px;
+                        margin-right: 5px;
+                    }
+                    span {
+                        font-size: 0.9rem;
+                        display: flex;
+                        align-items: center;
+                    }
+                }
+    
+                &.active,
+                &:hover {
+    
+                    background: $color-btn-navi;
+                    a {
+                        font-weight: bold;
+                        color: $color-white;
+                    }
+                }
+            }
+        }
+
+        .list-games {
+            display: flex;
+            flex-wrap: wrap;
+            li {
+                width: 18%;
+                margin: 1% 1% 1.5%;
+                position: relative;
+                &:hover {
+                    .detail-game {
+                        transition: 0.2s all ease-in-out;
+                        transform: translateX(-50%) scale(1);
+                    }
+                }
+                img {
+                    width: 100%;
+                    box-shadow: 0 0 10px rgba($color: #101828, $alpha: 0.2);
+                    border-radius: 5px;
+                }
+
+                .detail-game {
+                    cursor: pointer;
+                    border: 0;
+                    left: 50%;
+                    transform: translateX(-50%) scale(0);
+                    top: 0;
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    background: rgba($color: $color-black, $alpha: 0.5);
+                    border-radius: 5px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    transition: 0.2s all ease-in-out;
+                    span {
+                        font-size: 0.7rem;
+                        width: 65%;
+                        display: inline-block;
+                        padding: 10px;
+                        text-align: center;
+                        color: $color-white;
+                        background: $color-btn-navi;
+                        border-radius: 5px;
+                        text-transform: uppercase;
+                    }
+                }
+            }
+        }
+    }
+}

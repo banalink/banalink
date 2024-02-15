@@ -1,0 +1,77 @@
+.user {
+    .collapsible {
+        border: 0;
+        color: $color-black;
+        cursor: pointer;
+        padding: 18px;
+        width: 100%;
+        text-align: left;
+        outline: none;
+        font-size: 1rem;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        background: $color-white;
+        position: relative;
+        border-radius: 5px 5px 0 0;
+        .drop {
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            border: solid black;
+            border-width: 0 2px 2px 0;
+            display: inline-block;
+            padding: 2px;
+            margin-top: -4px;
+            transform: rotate(45deg);
+            -webkit-transform: rotate(45deg);
+        }
+    
+        i {
+            color: $color-black;
+            font-size: 1.2rem;
+            margin-right: 10px;
+        }
+        &:hover {
+            background: $color-hover;
+        }
+        &.active {
+            .drop {
+                transform: rotate(-135deg);
+                -webkit-transform: rotate(-135deg);
+            }
+        }
+    }
+
+    .content {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.2s ease-out;
+        border-bottom: 1px solid $color-border;
+        .mypage-info {
+            li {
+                font-size: 1rem;
+                margin: 0px 20px 15px;
+                color: $color-agent;
+                &:hover a {
+                    background: $color-hover;
+                }
+                a {
+                    display: block;
+                    padding: 5px 40px;
+                    border-radius: 3px;
+                }
+            }
+        }
+    }
+    .logout {
+        color: $color-red;
+        padding: 20px 20px;
+        display: flex;
+        align-items: center;
+        font-weight: bold;
+        p {
+            margin-left: 10px;
+        }
+    }
+}

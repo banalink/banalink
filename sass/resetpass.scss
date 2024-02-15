@@ -1,0 +1,201 @@
+.resetpassuser {
+    .back-user a {
+        display: flex;
+        align-items: center;
+        margin-left: 20px;
+        padding-bottom: 20px;
+        i {
+            margin: 0 10px;
+            font-size: 1rem;
+            color: $color-black;
+        }
+    }
+    .cnt-tabs {
+        padding: 0 !important;
+        .cnt-tab {
+            width: 45% !important;
+            margin: 0 !important;
+        }
+    }
+}
+.resetpass {
+  
+    .login-frm {
+      margin: 0 auto;
+      border-radius: 10px;
+      background: $color-white;
+      position: relative;
+      .close {
+        position: absolute;
+        right: 15px;
+        cursor: pointer;
+        top: 8px;
+        font-size: 2rem;
+        color: $color-bd-input;
+      }
+      @media (max-width: 768px) {
+        box-shadow: none;
+      }
+    }
+
+    .account {
+      width: 95%;
+      margin: 0 auto;
+      position: relative;
+  
+      .icon-user {
+        position: absolute;
+        top: 58px;
+        left: 10px;
+        @media (max-width: 768px) {
+          top: 69px;
+        }
+  
+        img {
+          width: 20px;
+          @media (max-width: 768px) {
+            width: 15px;
+          }
+        }
+  
+        &.eyes {
+          left: auto;
+          right: 20px;
+        }
+      }
+  
+      input {
+        height: 64px;
+        padding-left: 3rem;
+        font-size: 1rem;
+        line-height: 2rem;
+        border: 1px solid $color-bd-input;
+        --un-border-opacity: 0;
+        --un-bg-opacity: 1;
+        background-color: $color-white;
+        border-radius: .5rem;
+        margin-top: 35px;
+        color: $color-black;
+        width: calc(100% - 3rem);
+  
+        &:focus {
+          outline-style: solid;
+          outline-width: 0;
+          outline-color: $color-focus-input;
+          border: 1px solid $color-focus-input;
+        }
+  
+        @media (max-width: 768px) {
+          border-radius: 0.3rem;
+          height: 50px;
+        }
+      }
+  
+      label {
+        position: absolute;
+        top: 27px;
+        left: 35px;
+        z-index: 1;
+        color: $color-agent;
+        font-weight: normal;
+        @media (max-width: 768px) {
+          position: inherit;
+          left: 0;
+          font-weight: normal;
+        }
+
+        i {
+            color: $color-red;
+        }
+  
+        &::before {
+          content: "";
+          position: absolute;
+          width: 100%;
+          height: 1px;
+          background: $color-white;
+          top: 8px;
+          left: -10px;
+          z-index: -1;
+          padding: 0 10px;
+          @media (max-width: 768px) {
+            content: none;
+          }
+        }
+      }
+  
+      .error {
+        display: none;
+        p {
+          display: -webkit-box;
+          display: -ms-flexbox;
+          display: flex;
+          -webkit-box-align: center;
+          -ms-flex-align: center;
+          align-items: center;
+          font-size: 0.8rem;
+          padding-top: 5px;
+  
+          span {
+            color: $color-red;
+            display: inline-block;
+            margin-left: 5px;
+          }
+        }
+      }
+    }
+  
+    .login {
+      width: 95%;
+      margin: 10px auto 5px;
+  
+      .remember-pwd {
+        font-size: .875rem;
+        line-height: 1.25rem;
+        margin-left: 0.5rem;
+        display: block;
+      }
+  
+      .btn-login {
+        width: 100%;
+        height: 3rem;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        background: rgba($color: $color-db-button, $alpha: 1);
+        border: 0;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+        color: $color-bd-input;
+        border-radius: 5px;
+        cursor: pointer;
+        font-weight: bold;
+        text-transform: uppercase;
+        -webkit-animation: button-login .25s ease-out;
+        animation: button-login .25s ease-out;
+        margin-top: 40px;
+  
+        &:hover {
+          color: $color-white;
+          background: $color-primary;
+        }
+      }
+    }
+  
+    .logo-login {
+      margin: 0 auto;
+      text-align: center;
+      @media (max-width: 768px) {
+        width: 100%;
+        img {
+          width: 100%;
+        }
+      }
+    }
+  }
